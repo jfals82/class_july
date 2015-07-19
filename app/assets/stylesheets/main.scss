@@ -67,3 +67,14 @@ img {
         display: none;
     }
 }
+
+footer {
+    background: #333;
+    padding: 20px 0;
+    color: #fff;
+    .new_email {
+        .btn {
+             margin-top: 23px;
+        }
+    }
+}
