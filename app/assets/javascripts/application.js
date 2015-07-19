@@ -16,8 +16,31 @@
 //= require_tree .
 
 
-$(document).ready(function() {
-    $('.long-content').hover(function() {
-        $('.long-content span').slideToggle(); 
+// $(document).ready(function() {
+//     $('.long-content').hover(function() {
+//         $('.long-content span').slideToggle(); 
+//     });
+// });
+
+
+
+$(document).on('page:change', function() {
+    
+    $('#new_email').submit(function(e) {
+        e.preventDefault();
+        
+        var emailName = $('#email_name').val();
+        var emailEmail = $('#email_email').val();
+        
+        $.ajax({
+            url: 'emails',
+            type: 'POST',
+            data: {email: {name: emailName, email: emailEmail}},
+            complete: function(data) {
+                $('#new_email').html("<h2>Thanks for signing up!. I'll reach out to you soon.</h2>");
+            }
+        });
+        
     });
+    
 });

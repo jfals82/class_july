@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :emails
   resources :notes
   devise_for :users
   get '/about' => 'main#about', as: 'about'

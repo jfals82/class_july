@@ -18,29 +18,56 @@
   
   <body>
     
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     
-  <div class="nav dropdown">
-    <button class="btn btn-default" id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Navigation<span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dLabel">
-      <li><%= link_to('Home', root_path) %></li>
-      <li><%= link_to('About', about_path) %></li>
-      <li><%= link_to('Contact', contact_path) %></li>
-      <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-    </ul>
-  </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-links" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Jared Teaching</a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="nav-links">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to('Home', root_path) %></li>
+            <li><%= link_to('About', about_path) %></li>
+            <li><%= link_to('Contact', contact_path) %></li>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+    
+    
+    <% if notice || alert %>
+      <div class="notices">
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-warning"><%= alert %></p>
+        <% end %>
+      </div>
+    <% end %>
+
+
+
+
+
   
     <%= yield %>
     
     
-    <div class="contact">
-      Contact Form
-    </div>
+
     <footer>
-      Footer links
+      <div class="contact">
+        <%= render 'emails/form' %>
+      </div>
     </footer>
   </body>
 

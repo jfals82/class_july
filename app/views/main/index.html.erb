@@ -1,7 +1,33 @@
+
 <div class="hero">
     <h1>Jared is a very good teacher!</h1>
 </div>
 
+
+<xmp>
+    
+$(document).on('page:change', function() {
+    
+    $('#new_email').submit(function(e) {
+        e.preventDefault();
+        
+        var emailName = $('#email_name').val();
+        var emailEmail = $('#email_email').val();
+        
+        $.ajax({
+            url: 'emails',
+            type: 'POST',
+            data: {email: {name: emailName, email: emailEmail}},
+            complete: function(data) {
+                $('#new_email').html("<h2>Thanks for signing up!. I'll reach out to you soon.</h2>");
+            }
+        });
+        
+    });
+    
+});
+
+</xmp>
 <div class="container">
     <div class="copy row">
         <div class="col-sm-4">
