@@ -18,6 +18,10 @@
   
   <body>
     
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    
   <div class="nav dropdown">
     <button class="btn btn-default" id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Navigation<span class="caret"></span>
     </button>
@@ -25,6 +29,7 @@
       <li><%= link_to('Home', root_path) %></li>
       <li><%= link_to('About', about_path) %></li>
       <li><%= link_to('Contact', contact_path) %></li>
+      <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
     </ul>
   </div>
   
