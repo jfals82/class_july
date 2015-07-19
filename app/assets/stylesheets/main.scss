@@ -1,0 +1,69 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.hero {
+    height: 720px;    
+    background-color: #3879D9;
+    background-image: url("http://also.kottke.org/misc/images/pluto-high-res.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 300px;
+    margin: 0 0 50px 0;
+    h1 {
+        color: #ffffff;
+        font-size: 54px;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+.copy {
+    img {
+        width: 100%;
+    }
+    .image {
+        height: 200px;
+        background: url(http://www.wired.com/wp-content/uploads/2015/07/whistlegps-200x200-e1436987260508.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.copy:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+img {
+    width: 100px;
+}
+
+.long-content {
+    span {
+        display: none;
+    }
+}
